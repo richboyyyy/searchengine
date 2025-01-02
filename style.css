@@ -1,15 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Use Flexbox for centering */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    height: 100vh; /* Set the height to the full viewport */
-    background-color: #ffffff;
+/* Style the search bar container */
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    color: #64a46c;
-    text-align: center; /* Optional, ensures text is centered in block */
+/* Style the input field */
+#search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Style the button */
+#search-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Add hover effect to the button */
+#search-btn:hover {
+    background-color: #555;
 }
