@@ -6,7 +6,7 @@ body {
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */
     height: 100vh; /* Set the height to the full viewport */
-    background-color: #f0f0f0;
+    background-color: #000000;
 }
 
 h1 {
