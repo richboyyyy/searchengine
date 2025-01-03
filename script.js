@@ -8,7 +8,7 @@ document.getElementById("search-btn").addEventListener("click", async function (
         aiResponseDiv.style.display = "block";
 
         // Call the OpenAI API
-        const apiKey = "YOUR_OPENAI_API_KEY"; // Replace with your OpenAI API key
+        const apiKey = "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"; // Replace with your OpenAI API key
         const endpoint = "https://api.openai.com/v1/completions";
 
         try {
