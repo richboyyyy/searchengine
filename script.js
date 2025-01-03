@@ -3,33 +3,24 @@ document.getElementById("search-btn").addEventListener("click", async function (
     const aiResponseDiv = document.getElementById("ai-response");
 
     if (searchQuery) {
-        // Display a loading message while waiting for the response
         aiResponseDiv.innerHTML = "Fetching AI response...";
         aiResponseDiv.style.display = "block";
 
-        // Call the OpenAI API
-        const apiKey = "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"; // Replace with your OpenAI API key
-        const endpoint = "https://api.openai.com/v1/completions";
-
         try {
-            const response = await fetch(endpoint, {
+            const response = await fetch("http://localhost:3000/ai-query", { // Update this URL to your server URL
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${apiKey}`,
                 },
-                body: JSON.stringify({
-                    model: "text-davinci-003", // Or another GPT model
-                    prompt: searchQuery,
-                    max_tokens: 100,
-                }),
+                body: JSON.stringify({ query: searchQuery })
             });
 
             const data = await response.json();
-            const aiText = data.choices[0].text.trim();
-
-            // Display the AI response
-            aiResponseDiv.innerHTML = aiText;
+            if (data.choices && data.choices[0]) {
+                aiResponseDiv.innerHTML = data.choices[0].text.trim();
+            } else {
+                aiResponseDiv.innerHTML = "No response from AI.";
+            }
         } catch (error) {
             aiResponseDiv.innerHTML = "Sorry, something went wrong. Please try again.";
         }
